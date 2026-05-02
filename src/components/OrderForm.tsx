@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 
 const ENDPOINT =
-  "https://script.google.com/macros/s/AKfycbx1HG43UYLqcNYOmELIzCPJMuJrrgHshYNNA15kbqgZVZbUJCYjQ0rpHscmPLOUILw/exec";
+  "https://script.google.com/macros/s/AKfycbypvISbFaSz62R_rAc1IfZPK_TFzuLV5BUnifK9TYB96dTkI-BMs5iyQZDn8QIHe1yr/exec";
 
 type FormState = {
   name: string;
@@ -306,7 +306,6 @@ function MoneyRow({
             <option value="InstaPay">انستا باي</option>
             <option value="Vodafone Cash">فودافون كاش</option>
             <option value="Bank Transfer">تحويل بنكي</option>
-            <option value="Card">فيزا</option>
           </select>
         ) : (
           <input
