@@ -250,7 +250,7 @@ function FieldRow({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           rows={2}
-          className="flex-1 bg-transparent border-b border-dashed border-navy/30 focus:border-gold focus:outline-none px-2 py-1 text-navy text-sm sm:text-base resize-none text-right"
+          className="flex-1 min-w-0 bg-transparent border-b border-dashed border-navy/30 focus:border-gold focus:outline-none px-2 py-1 text-navy text-sm sm:text-base resize-none text-right"
         />
       ) : (
         <input
@@ -258,7 +258,7 @@ function FieldRow({
           type={type || "text"}
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className={`flex-1 bg-transparent border-b border-dashed border-navy/30 focus:border-gold focus:outline-none px-2 py-1 text-navy text-sm sm:text-base ${type === "url" || type === "tel" ? "text-left" : "text-right"}`}
+          className={`flex-1 min-w-0 bg-transparent border-b border-dashed border-navy/30 focus:border-gold focus:outline-none px-2 py-1 text-navy text-sm sm:text-base ${type === "url" || type === "tel" ? "text-left" : "text-right"}`}
         />
       )}
     </div>
@@ -289,9 +289,9 @@ function MoneyRow({
       </div>
 
       {/* EGP badge (right) + input (left) */}
-      <div dir="rtl" className="flex-1 flex items-stretch rounded-md overflow-hidden ring-1 ring-gold/40 bg-white/40">
+      <div dir="rtl" className="flex-1 min-w-0 flex items-stretch rounded-md overflow-hidden ring-1 ring-gold/40 bg-white/40">
         {!isSelect && (
-          <span className="bg-navy text-gold text-[10px] sm:text-xs font-bold px-2 sm:px-3 flex items-center tracking-wider">
+          <span className="bg-navy text-gold text-[10px] sm:text-xs font-bold px-2 sm:px-3 flex items-center tracking-wider shrink-0">
             EGP
           </span>
         )}
@@ -299,7 +299,7 @@ function MoneyRow({
           <select
             value={value}
             onChange={(e) => onChange(e.target.value)}
-            className="flex-1 bg-transparent px-2 sm:px-3 py-2 text-navy text-sm sm:text-base focus:outline-none text-right"
+            className="flex-1 min-w-0 bg-transparent px-2 sm:px-3 py-2 text-navy text-sm sm:text-base focus:outline-none text-right"
           >
             <option value="">— اختر —</option>
             <option value="Cash">كاش</option>
@@ -316,7 +316,7 @@ function MoneyRow({
             value={value}
             readOnly={readOnly}
             onChange={(e) => onChange(e.target.value)}
-            className={`flex-1 bg-transparent px-2 sm:px-3 py-2 text-navy text-sm sm:text-base focus:outline-none text-right ${readOnly ? "font-semibold" : ""}`}
+            className={`flex-1 min-w-0 bg-transparent px-2 sm:px-3 py-2 text-navy text-sm sm:text-base focus:outline-none text-right ${readOnly ? "font-semibold" : ""}`}
           />
         )}
       </div>
