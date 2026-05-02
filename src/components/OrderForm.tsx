@@ -231,16 +231,16 @@ function FieldRow({
   multiline?: boolean;
 }) {
   return (
-    <div dir="rtl" className="flex items-stretch gap-3 py-2.5">
+    <div dir="rtl" className="flex items-stretch gap-2 sm:gap-3 py-2 sm:py-2.5">
       {/* Icon tab — far right in RTL */}
-      <div className="flex items-center justify-center w-11 rounded-lg bg-navy text-gold shrink-0">
+      <div className="flex items-center justify-center w-9 sm:w-11 rounded-lg bg-navy text-gold shrink-0">
         <Icon className="h-4 w-4" />
       </div>
 
       {/* Label */}
-      <div className="flex items-center min-w-[140px]">
-        <span className="text-gold mx-2">/</span>
-        <span className="text-navy font-semibold whitespace-nowrap">{label}</span>
+      <div className="flex items-center min-w-[100px] sm:min-w-[140px]">
+        <span className="text-gold mx-1 sm:mx-2">/</span>
+        <span className="text-navy font-semibold whitespace-nowrap text-sm sm:text-base">{label}</span>
       </div>
 
       {/* Input */}
@@ -250,7 +250,7 @@ function FieldRow({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           rows={2}
-          className="flex-1 bg-transparent border-b border-dashed border-navy/30 focus:border-gold focus:outline-none px-2 py-1 text-navy resize-none text-right"
+          className="flex-1 bg-transparent border-b border-dashed border-navy/30 focus:border-gold focus:outline-none px-2 py-1 text-navy text-sm sm:text-base resize-none text-right"
         />
       ) : (
         <input
@@ -258,7 +258,7 @@ function FieldRow({
           type={type || "text"}
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className={`flex-1 bg-transparent border-b border-dashed border-navy/30 focus:border-gold focus:outline-none px-2 py-1 text-navy ${type === "url" || type === "tel" ? "text-left" : "text-right"}`}
+          className={`flex-1 bg-transparent border-b border-dashed border-navy/30 focus:border-gold focus:outline-none px-2 py-1 text-navy text-sm sm:text-base ${type === "url" || type === "tel" ? "text-left" : "text-right"}`}
         />
       )}
     </div>
@@ -276,28 +276,30 @@ function MoneyRow({
   isSelect?: boolean;
 }) {
   return (
-    <div dir="rtl" className="flex items-center gap-2">
+    <div dir="rtl" className="flex items-center gap-2 sm:gap-3 py-1 sm:py-0">
       {/* Icon tab — far right in RTL */}
-      <div className="flex items-center justify-center w-11 h-10 rounded-lg bg-navy text-gold shrink-0">
+      <div className="flex items-center justify-center w-9 sm:w-11 h-9 sm:h-10 rounded-lg bg-navy text-gold shrink-0">
         <Icon className="h-4 w-4" />
       </div>
 
       {/* Label */}
-      <div className="flex items-center min-w-[140px]">
-        <span className="text-gold mx-2">/</span>
-        <span className="text-navy font-semibold whitespace-nowrap">{label}</span>
+      <div className="flex items-center min-w-[100px] sm:min-w-[140px]">
+        <span className="text-gold mx-1 sm:mx-2">/</span>
+        <span className="text-navy font-semibold whitespace-nowrap text-sm sm:text-base">{label}</span>
       </div>
 
       {/* EGP badge (right) + input (left) */}
       <div dir="rtl" className="flex-1 flex items-stretch rounded-md overflow-hidden ring-1 ring-gold/40 bg-white/40">
-        <span className="bg-navy text-gold text-xs font-bold px-3 flex items-center tracking-wider">
-          {isSelect ? "" : "EGP"}
-        </span>
+        {!isSelect && (
+          <span className="bg-navy text-gold text-[10px] sm:text-xs font-bold px-2 sm:px-3 flex items-center tracking-wider">
+            EGP
+          </span>
+        )}
         {isSelect ? (
           <select
             value={value}
             onChange={(e) => onChange(e.target.value)}
-            className="flex-1 bg-transparent px-3 py-2 text-navy focus:outline-none text-right"
+            className="flex-1 bg-transparent px-2 sm:px-3 py-2 text-navy text-sm sm:text-base focus:outline-none text-right"
           >
             <option value="">— اختر —</option>
             <option value="Cash">كاش</option>
@@ -314,7 +316,7 @@ function MoneyRow({
             value={value}
             readOnly={readOnly}
             onChange={(e) => onChange(e.target.value)}
-            className={`flex-1 bg-transparent px-3 py-2 text-navy focus:outline-none text-right ${readOnly ? "font-semibold" : ""}`}
+            className={`flex-1 bg-transparent px-2 sm:px-3 py-2 text-navy text-sm sm:text-base focus:outline-none text-right ${readOnly ? "font-semibold" : ""}`}
           />
         )}
       </div>
