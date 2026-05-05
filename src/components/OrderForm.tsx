@@ -302,10 +302,8 @@ function MoneyRow({
             className="flex-1 min-w-0 bg-transparent px-2 sm:px-3 py-2 text-navy text-sm sm:text-base focus:outline-none text-right"
           >
             <option value="">— اختر —</option>
-            <option value="Cash">كاش</option>
             <option value="InstaPay">انستا باي</option>
             <option value="Vodafone Cash">فودافون كاش</option>
-            <option value="Bank Transfer">تحويل بنكي</option>
           </select>
         ) : (
           <input
